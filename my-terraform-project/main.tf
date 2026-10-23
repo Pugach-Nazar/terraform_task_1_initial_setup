@@ -11,15 +11,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "mate_terraform" {
-  name     = "mate-terraform-resources"
+resource "azurerm_resource_group" "mate1" {
+  name     = "example-resources"
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "mate_terraform" {
-  name                     = "mate-terraform-storage"
-  resource_group_name      = azurerm_resource_group.mate_terraform.name
-  location                 = azurerm_resource_group.mate_terraform.location
+resource "azurerm_storage_account" "matestorage111" {
+  name                     = "examplestorageacc"
+  resource_group_name      = azurerm_resource_group.mate1.name
+  location                 = azurerm_resource_group.mate1.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
